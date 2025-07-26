@@ -31,7 +31,9 @@ pip install yt-dlp
 
 ## Structure
 
+```text
 VideoDownload/
 ├── ffmpeg/
 │ └── ffmpeg.exe 
 ├── VideoDownload.py 
+```
