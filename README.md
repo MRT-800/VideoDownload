@@ -17,19 +17,21 @@ A simple and user-friendly Python GUI application to download videos and audio f
 - Real-time progress bar, download speed, and estimated time remaining
 - View detailed log of download process
 - Open folder containing downloaded file with one click after completion
-- Bundled FFmpeg executable for audio extraction and video processing (no need to install separately)
+- Bundled FFmpeg executable for audio extraction and video processing
 
 ---
 
-## Installation
 
-1. **Clone the repository:**
-
-```bash
-git clone https://github.com/MRT-800/VideoDownload.git
-cd VideoDownload
-
+**Clone the repository:**
 
 Install dependencies:
-```sh
+
 pip install yt-dlp
+
+
+## Structure
+
+VideoDownload/
+├── ffmpeg/
+│ └── ffmpeg.exe 
+├── VideoDownload.py 

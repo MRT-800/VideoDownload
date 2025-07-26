@@ -36,7 +36,7 @@ class DownloaderGUI(tk.Tk):
         self._build_ui()
         self.downloading = False
 
-    # ---------- NEW HELPERS ----------
+   
 
     def _app_base_dir(self):
         """
@@ -45,7 +45,7 @@ class DownloaderGUI(tk.Tk):
         - Else: folder of this .py file
         """
         if getattr(sys, "frozen", False):
-            return sys._MEIPASS  # PyInstaller temp extraction dir
+            return sys._MEIPASS  
         return os.path.dirname(os.path.abspath(__file__))
 
     def _ffmpeg_path(self):
@@ -54,10 +54,10 @@ class DownloaderGUI(tk.Tk):
         Works both when frozen and when run from source.
         """
         base = self._app_base_dir()
-        # Keep your structure: <app>/ffmpeg/ffmpeg.exe
+        
         return os.path.join(base, "ffmpeg", "ffmpeg.exe")
 
-    # ---------------------------------
+    
 
     def _style_theme(self):
         style = ttk.Style()
@@ -123,7 +123,7 @@ class DownloaderGUI(tk.Tk):
         self.log_text = tk.Text(log_frame, height=8, wrap="word", state="disabled", bg="black", fg="#76b900", insertbackground="white", font=("Comic Sans MS", 10, "bold"))
         self.log_text.pack(fill="both", expand=True, padx=pad, pady=pad)
 
-        # DONE button (hidden initially)
+       
         self.done_btn = tk.Button(self, text="DONE!", font=("Comic Sans MS", 14, "bold"), bg="#76b900", fg="black", command=self._open_last_file)
         self.done_btn.pack_forget()
 
@@ -189,12 +189,11 @@ class DownloaderGUI(tk.Tk):
                 self._set_status("Post-processing…")
                 self.last_downloaded_file = d.get('filename')
 
-        # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        # CHANGED: resolve ffmpeg path dynamically (works on any PC).
+ 
         ffmpeg_exe = self._ffmpeg_path()
-        # You can pass either the binary or the folder. Using the binary path is fine:
+       
         ffmpeg_loc = ffmpeg_exe
-        # <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        
 
         ydl_opts = {
             'format': fmt,
